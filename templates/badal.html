@@ -1,0 +1,41 @@
+<!doctype html>
+
+<title>{% block title %}Welcome{% endblock %} | Badal The Cloud</title>
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+<div class=page>
+  
+	<h1>Badal the Cloud</h1>
+ 
+	<div class=navigation>
+     
+		{% if g.user %}
+    
+			<a href="{{ url_for('cloud') }}">Home</a> |
+       
+			<a href="{{ url_for('logout') }}">sign out [{{ g.user.username }}]</a>
+  
+		{% else %}
+     
+			<a href="{{ url_for('register') }}">sign up</a> |
+    
+			<a href="{{ url_for('login') }}">sign in</a>
+  
+		{% endif %}
+  
+  
+	</div>
+   
+	<div class=body>
+  
+		{% block body %}
+		Welcome to the Badal. Badal is a cloud server where you can store any data for free. Couldn't find a better description so just register/sign in, store data/download data and go away. Peace Out.
+		{% endblock %}
+  
+	</div>
+  
+	<div class=footer>
+    Badal The Cloud &mdash; An Ankush Bhatia's lame project  </div>
+
+</div>

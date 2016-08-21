@@ -1,0 +1,33 @@
+{% extends "badal.html" %}
+
+{% block title %}
+Welcome to Badal The Cloud
+{% endblock %}
+
+{% block body %}
+  
+<h2>Choose Action</h2>
+  
+{% if error %}
+<div class=error><strong>Error:</strong> {{ error }}</div>
+{% endif %}
+  
+<h3>Upload</h3>
+<form action="" method=post enctype=multipart/form-data>
+    
+	<dl>
+		<dt>Upload:	<dd><input type=file name=file>
+	</dl>
+	<div class=actions>
+		<input type=submit name="file1" value="Upload">
+	</div>
+  
+</form>
+<h3>Download</h3>
+<div class=actions>
+<form action="" method=post enctype=multipart/form-data>
+    
+	<input type=submit name="file1" value="Download">
+</form>
+</div>
+{% endblock %}
